@@ -5,9 +5,10 @@ Vagrant.configure("2") do |config|
   #config.vm.network "public_network", bridge: "enp0s25"
 
   config.vm.network "forwarded_port", guest: 8123, host: 8123
+#   config.vm.network "forwarded_port", guest: 80, host: 80
   config.vm.network "forwarded_port", guest: 4357, host: 4357
 
-  #config.vm.synced_folder "/home/scott/home-assistant/ha_config", "/usr/share/hassio/homeassistant"
+  config.vm.synced_folder "/home/scott/home-assistant/ha_config", "/usr/share/hassio/homeassistant"
 
   config.vm.provision "shell", path: "./install.sh"
 end
