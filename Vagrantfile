@@ -9,5 +9,5 @@ Vagrant.configure("2") do |config|
 
   #config.vm.synced_folder "/home/scott/home-assistant/ha_config", "/usr/share/hassio/homeassistant"
 
-  config.vm.provision "shell", path: "./install.sh"
+  config.vm.provision "shell", path: "./install_supervisor.sh"
 end
