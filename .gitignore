@@ -1,5 +1,7 @@
 .idea
 
+*.swp
+
 .vagrant
 
 # Local .terraform directories
