@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 # Note that bridgeadapter may differ
 
 # Note that latest version may differ
