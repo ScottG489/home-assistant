@@ -3,7 +3,7 @@ set -ex
 # Note that bridgeadapter may differ
 
 # Note that latest version may differ
-wget https://github.com/home-assistant/operating-system/releases/download/6.6/haos_ova-6.6.vmdk.zip
+wget --progress=bar:force:noscroll https://github.com/home-assistant/operating-system/releases/download/6.6/haos_ova-6.6.vmdk.zip
 unzip haos_ova-6.6.vmdk.zip
 
 VM_UUID=$(vboxmanage createvm --name haos-vm --default --register --ostype Linux_64 | grep UUID | awk '{print $2}')
