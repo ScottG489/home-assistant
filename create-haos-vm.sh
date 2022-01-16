@@ -7,7 +7,7 @@ wget --progress=bar:force:noscroll https://github.com/home-assistant/operating-s
 unzip haos_ova-6.6.vmdk.zip
 
 VM_UUID=$(vboxmanage createvm --name haos-vm --default --register --ostype Linux_64 | grep UUID | awk '{print $2}')
-NET_DEVICE=$(ip link | grep -v 'lo\|vir\|wl\|^[^0-9]' | awk '{print $2}' | sed 's/.$//')
+NET_DEVICE=$(ip link | grep -v 'lo\|vir\|wl\|^[^0-9]' | awk '{print $2}' | sed 's/.$//' | head -1)
 BLUETOOTH_USB_DEVICE_VENDOR_ID=$(vboxmanage list usbhost | grep VendorId | head -1 | awk '{print $2}')
 BLUETOOTH_USB_DEVICE_PRODUCT_ID=$(vboxmanage list usbhost | grep ProductId | head -1 | awk '{print $2}')
 vboxmanage modifyvm "$VM_UUID" --firmware efi --nic1 bridged --bridgeadapter1 "$NET_DEVICE" --memory 4096
